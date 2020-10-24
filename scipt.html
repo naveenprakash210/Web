@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+
+    <style>
+        body
+        {
+            background-color: darkgrey;
+        }
+        #header
+        {
+            text-align: center;
+            background-color: bisque;
+        }
+        #main
+        {
+            text-align: center;
+        }
+        #showInfo
+        {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function productDescription()
+        {
+            var Mobile = ["Iphone", "SAMSUNG"];
+            var TV = ["SONY", "LG"];
+            var Laptop = ["HP", "DELL"];
+            desc = document.getElementById("dropDown");
+            info = desc.options[desc.selectedIndex].value;
+            if(info == 1)
+            {
+                document.getElementById("showInfo").innerHTML = Mobile;
+            }
+            else if(info == 2)
+            {
+                document.getElementById("showInfo").innerHTML = TV;
+            }
+            else
+            {
+                document.getElementById("showInfo").innerHTML = Laptop;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="header">
+        <h1>Drop Down</h1>
+    </div>
+    <div id="main">
+        <select id="dropDown" onchange="productDescription()">
+            <option>--Product--</option>
+            <option value=1>Mobile</option>
+            <option value=2>TV</option>
+            <option value=3>Laptop</option>
+        </select>
+    </div>
+    <br>
+    <div id="showInfo">
+       
+    </div>
+</body>
+</html>
